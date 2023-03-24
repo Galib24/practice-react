@@ -5,4 +5,12 @@ const add = (first, second) =>{
 const multiply = (first, second) =>{
     return first * second;
 }
-export {add,multiply}
+const subsTract= (first, second) =>{
+    return first - second;
+
+}
+const DevIded =(first,second)=>{
+    return first / second;
+
+}
+export {add,multiply,subsTract,DevIded}
