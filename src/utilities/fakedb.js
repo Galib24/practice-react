@@ -24,5 +24,25 @@ shoppingCart[id]=newQuantity;
     }
     localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
 }
+const removeFromDb = id =>{
+// console.log('inside fake db', id);
+const storedCart = localStorage.getItem('shopping-cart');
+if(storedCart){
+    const shoppingCart= JSON.parse(storedCart);
+    if(id in shoppingCart){
+// console.log('exist in the cart');
+delete shoppingCart[id];
+localStorage.setItem('shopping-cart', JSON.stringify(shoppingCart));
+    }
+}
+}
 
-export  {addToDb};
+const deleteShoppingCart = () =>{
+    localStorage.removeItem('shopping-cart');
+}
+
+export  {
+    addToDb,
+    removeFromDb,
+  deleteShoppingCart
+};
